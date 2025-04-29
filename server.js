@@ -31,6 +31,11 @@ const Inventory = mongoose.model('Inventory', inventorySchema);
 
 // Rotte per la gestione dell'inventario
 
+// Endpoint per la root ("/")
+app.get('/', (req, res) => {
+  res.send('Benvenuto su Inventario ER 2025!');
+});
+
 // Ottieni tutti gli oggetti nell'inventario
 app.get('/api/inventario', async (req, res) => {
   try {
