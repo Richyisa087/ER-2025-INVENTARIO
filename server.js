@@ -6,7 +6,7 @@ require('dotenv').config();  // Carica le variabili d'ambiente da .env
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 
 // Middleware
 app.use(cors());  // Abilita CORS per richieste cross-origin

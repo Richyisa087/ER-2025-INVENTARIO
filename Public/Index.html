@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="it">
 
@@ -36,3 +37,43 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Estate-Ragazzi.ico" type="image/x-icon">
+    <title>Inventario ER 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Inventario Estate Ragazzi</h1>
+    </header>
+
+    <div class="add">
+        <label for="nomeOggetto">Nome oggetto:</label>
+        <input type="text" id="nomeOggetto" placeholder="Es. Matita, Fogli A4" />
+
+        <label for="quantita">Quantità:</label>
+        <input type="number" id="quantita" min="1" placeholder="Quantità" />
+
+        <div class="buttons">
+            <button id="addBtn">Aggiungi</button>
+        </div>
+    </div>
+
+    <section class="cancelleria">
+        <h2>Cancelleria</h2>
+        <div id="cancelleria"></div>
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+>>>>>>> e6de8e17056b35ec555b3d8beb3fee46bd73d9ae
