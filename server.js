@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();  // Carica le variabili d'ambiente da .env
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 10000;
@@ -20,6 +21,9 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch((err) => {
     console.error('Errore di connessione a MongoDB:', err);
   });
+
+// Servire i file statici dalla cartella public
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Schema e modello per l'inventario
 const inventorySchema = new mongoose.Schema({

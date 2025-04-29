@@ -120,3 +120,24 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
 
 // Carica l'inventario quando la pagina viene caricata
 window.onload = aggiornaInventario;
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetchInventory();
+
+    function fetchInventory() {
+        fetch('/api/inventario')
+            .then(response => response.json())
+            .then(data => {
+                const inventarioDiv = document.getElementById('inventario');
+                inventarioDiv.innerHTML = ''; // Pulisce l'inventario esistente
+
+                data.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.textContent = `${item.nome}: ${item.quantita} pezzo/i`;
+                    inventarioDiv.appendChild(itemDiv);
+                });
+            })
+            .catch(err => console.log('Errore nel recupero dell’inventario:', err));
+    }
+});
+
